@@ -32,7 +32,7 @@ extension IR.Entity.Location.FieldComponent {
   func formattedSelectionSetName(
     with pluralizer: Pluralizer
   ) -> String {
-    var fieldName = name.firstUppercased
+    var fieldName = name.convertToCamelCase().firstUppercased
     if type.isListType {
       fieldName = pluralizer.singularize(fieldName)
     }
